@@ -35,11 +35,72 @@
 
 // --------
 
-let container = document.getElementById("contenedor");
-//ACA ESTAMOS AGREGANDO ETIQUETA HTML, CON EL ANTERIOR ESTABAMOS MODIFICANDOLA
-//cambiando el codigo html interno
-container.innerHTML = "<h2>Hola mundo </h2><p> Lorem ipsum</p>";
+// let container = document.getElementById("contenedor");
+// //ACA ESTAMOS AGREGANDO ETIQUETA HTML, CON EL ANTERIOR ESTABAMOS MODIFICANDOLA
+// //cambiando el codigo html interno
+// container.innerHTML = "<h2>Hola mundo </h2><p> Lorem ipsum</p>";
 
-//cambio del atributo class
-container.className = "container row";
+// //cambio del atributo class
+// container.className = "container row";
 
+//agregar o modificar elementos
+
+let parrafo = document.createElement("p");
+
+parrafo.innerHTML = "<h2>hola coder!</h2>";
+//metodo append()
+document.body.append(parrafo)
+
+//eliminar elementos
+
+//obtener datos mediante inputs
+//planillas de texto!
+//plantillas literales
+
+//modificar valores de inputs
+
+// document.getElementById("nombre").value = "Nombre";
+// document.getElementById("edad").value = "39";
+
+// ejemplo aplicado
+
+let padre = document.getElementById("personas");
+
+let personas = ["Homero", "Kev", "lisa", "Juan"];
+
+for (const persona of personas) {
+    // console.log(persona);
+    let li = document.createElement("li");
+
+    li.innerHTML = persona;
+
+    padre.appendChild(li);
+
+}
+
+//appendChild
+//agrega un nuevo nodo al final de la lista de un elemento hijo de un elemento padre especificado
+
+//ejemplo con plantillas literales e innetHTML
+
+let productos = [
+    {id: 1, nombre: "arroz", precio: 125},
+    {id: 2, nombre: "fideo", precio: 70},
+    {id: 3, nombre: "pan", precio: 100},
+    {id: 4, nombre: "harina", precio: 75},
+]
+
+for (const producto of productos) {
+    
+    let contenedor = document.createElement("div");
+
+    contenedor.innerHTML = `<div class="container"
+                                <h3>ID: ${producto.id} </h3>
+                                <p> Producto: ${producto.nombre} <p/>
+                                <b>$${producto.precio}</b>
+                            </div>`
+    document.body.appendChild(contenedor);                        
+}
+
+//query selector (metodo)
+//query selector all
